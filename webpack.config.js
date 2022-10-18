@@ -1,6 +1,5 @@
 const path = require("path");
 const HTMLPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
@@ -27,18 +26,19 @@ module.exports = {
     new HTMLPlugin({
       template: "./src/index.html",
     }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "resources"),
-          to: path.resolve(__dirname, "dist", "resources"),
-        },
-        {
-          from: path.resolve(__dirname, "src", "styles"),
-          to: path.resolve(__dirname, "dist", "styles"),
-        },
-      ],
-    }),
+    // if needed to add some resourses or styles
+    // new CopyPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.resolve(__dirname, "resources"),
+    //       to: path.resolve(__dirname, "dist", "resources"),
+    //     },
+    //     {
+    //       from: path.resolve(__dirname, "src", "styles"),
+    //       to: path.resolve(__dirname, "dist", "styles"),
+    //     },
+    //   ],
+    // }),
     new CleanWebpackPlugin(),
   ],
 };
