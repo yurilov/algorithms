@@ -25,13 +25,13 @@ class SortUnitTest
 		expect(arrayLength).to.be.equal(this.length);
 	}
 
-	@test 'Check bubbleSorted array length' ()
+	@test 'Check bubbleSorted array length'()
 	{
 		const sortedArrayLength = this.SUT.bubbleSort(this.SUT.array).length;
 		expect(sortedArrayLength).to.be.equal(this.length);
 	}
 
-	@test 'Check optimized bubbleSorted array length' ()
+	@test 'Check optimized bubbleSorted array length'()
 	{
 		const sortedArrayLength = this.SUT.optimizedBubbleSort(this.SUT.array).length;
 		expect(sortedArrayLength).to.be.equal(this.length);
